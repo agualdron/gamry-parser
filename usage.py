@@ -8,7 +8,7 @@ print('GamryParser() usage:')
 print("experiment type: {}".format(gp.get_experiment_type()))
 print("loaded curves: {}".format(gp.get_curve_count()))
 
-curve_index = random.randint(1, gp.get_curve_count())
+curve_index = random.randint(1, gp.get_curve_count() - 1)
 print("showing curve #{}".format(curve_index))
 print(gp.get_curve_data(curve_index))
 
@@ -24,3 +24,7 @@ curve = cv.get_curve_data(curve_index)
 print("showing curve #{}".format(curve_index))
 print('Acheived V range: [{}, {}]'.format(min(curve['Vf']), max(curve['Vf'])))
 print(curve)
+
+peaks = cv.get_peaks()
+print("getting peaks from curve data")
+print(peaks)
